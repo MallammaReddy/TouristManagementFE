@@ -1,0 +1,179 @@
+{
+  "Users": [
+    {
+      "userId": 1,
+      "userName": "company1",
+      "password": "company1",
+      "isAdmin": false,
+      "createdDate": "01-05-2023"
+    },
+    {
+      "userId": 2,
+      "userName": "company2",
+      "password": "company2",
+      "isAdmin": false,
+      "createdDate": "01-05-2023"
+    },
+    {
+      "userId": 3,
+      "userName": "admin",
+      "password": "admin",
+      "isAdmin": true,
+      "createdDate": "01-05-2023"
+    }
+  ],
+  "Company": [
+    {
+      "id": 1,
+      "branchName": "Pune",
+      "place": "Balewadi",
+      "website": "www.puneTourism.com",
+      "contact": "9876543210",
+      "email": "balewadi@gmail.com",
+      "createdDate": "01-05-2023",
+      "modifiedDate": ""
+    },
+    {
+      "id": 2,
+      "branchName": "Mumbai",
+      "place": "Ghatkoper",
+      "website": "www.mumbaiTourism.com",
+      "contact": "945543210",
+      "email": "mumbai@gmail.com",
+      "createdDate": "01-05-2023",
+      "modifiedDate": ""
+    },
+    {
+      "id": 3,
+      "branchName": "Chennai",
+      "place": "OMR",
+      "website": "www.chennaiTourism.com",
+      "contact": "9437843210",
+      "email": "chennai@gmail.com",
+      "createdDate": "01-05-2023",
+      "modifiedDate": ""
+    },
+    {
+      "id": 4,
+      "branchName": "Kerela",
+      "place": "Munnar",
+      "website": "www.munnarTourism.com",
+      "contact": "9876543210",
+      "email": "munnar@gmail.com",
+      "createdDate": "01-05-2023",
+      "modifiedDate": ""
+    },
+    {
+      "branchName": "afasdf",
+      "place": "asdfasf",
+      "website": "www.dasf.com",
+      "contact": "87979879723",
+      "email": "dsaf@dfsf.com",
+      "createdDate": "15/05/2023",
+      "id": 5
+    },
+    {
+      "branchName": "test",
+      "place": "test",
+      "website": "www.dsaf.com",
+      "contact": "9789087654",
+      "email": "test@test.com",
+      "createdDate": "15/05/2023",
+      "id": 6
+    }
+  ],
+  "TouristPlaces": [
+    {
+      "placeId": 1,
+      "placeName": "Andaman"
+    },
+    {
+      "placeId": 2,
+      "placeName": "Thailand"
+    },
+    {
+      "placeId": 3,
+      "placeName": "Dubai"
+    },
+    {
+      "placeId": 4,
+      "placeName": "Singapore"
+    },
+    {
+      "placeId": 5,
+      "placeName": "Malaysia"
+    }
+  ],
+  "CompanyPlaceMapping": [
+    {
+      "id": 1,
+      "branchId": 1,
+      "placeId": 1,
+      "tariff": 50000,
+      "lastUpdatedDate": "20-04-2023"
+    },
+    {
+      "id": 2,
+      "branchId": 1,
+      "placeId": 2,
+      "tariff": 60000,
+      "lastUpdatedDate": "22-04-2023"
+    },
+    {
+      "id": 3,
+      "branchId": 1,
+      "placeId": 3,
+      "tariff": 70000,
+      "lastUpdatedDate": "23-04-2023"
+    },
+    {
+      "id": 4,
+      "branchId": 1,
+      "placeId": 4,
+      "tariff": 80000,
+      "lastUpdatedDate": "24-04-2023"
+    },
+    {
+      "id": 5,
+      "branchId": 2,
+      "placeId": 1,
+      "tariff": 50000,
+      "lastUpdatedDate": "20-04-2023"
+    },
+    {
+      "id": 6,
+      "branchId": 2,
+      "placeId": 2,
+      "tariff": 60000,
+      "lastUpdatedDate": "22-04-2023"
+    },
+    {
+      "id": 7,
+      "branchId": 2,
+      "placeId": 3,
+      "tariff": 70000,
+      "lastUpdatedDate": "23-04-2023"
+    },
+    {
+      "id": 8,
+      "branchId": 3,
+      "placeId": 3,
+      "tariff": 70000,
+      "lastUpdatedDate": "23-04-2023"
+    },
+    {
+      "id": 9,
+      "branchId": 3,
+      "placeId": 4,
+      "tariff": 80000,
+      "lastUpdatedDate": "24-04-2023"
+    },
+    {
+      "id": 10,
+      "branchId": 3,
+      "placeId": 5,
+      "tariff": 90000,
+      "lastUpdatedDate": "24-04-2023"
+    }
+  ]
+}

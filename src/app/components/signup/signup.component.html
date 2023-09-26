@@ -1,0 +1,35 @@
+<div class="col-md-4 col-sm-12 col-xs-12 offset-md-4 mt-5">
+    <div class="signup-page">
+      <div class="form">
+        <form name="signupForm" class="signup-form" (ngSubmit)="s.form.valid && onSubmit()" #s="ngForm">
+          <h1 class="text-center">SignUp Here !!</h1>
+          <div class="form-group col-md-12  col-sm-12 col-xs-12">
+            <label for="firstName" class="col-md-12 col-sm-12 col-xs-12 text-left">First Name</label>
+            <input type="text" name="firstName" id="firstName" class="form-control" [(ngModel)]="user.firstName" #firstName="ngModel" required pattern="^[a-zA-Z ]*$"/>
+            <div *ngIf="!firstName.valid && firstName.touched" class="error-msg">First Name is required and can contain only Alphabets and space</div>
+          </div>
+          <div class="form-group col-md-12  col-sm-12 col-xs-12">
+            <label class="col-md-12  col-sm-12 col-xs-12 text-left">Last Name </label>
+            <input type="text" class="form-control"  name="lastName" id="lastName" [(ngModel)]="user.lastName" #lastName="ngModel" required pattern="^[a-zA-Z ]*$"/>
+            <div *ngIf="!lastName.valid && lastName.touched" class="error-msg">Last Name is required and can contain only Alphabets and space</div>
+          </div>
+          <div class="form-group col-md-12  col-sm-12 col-xs-12">
+            <label class="col-md-12  col-sm-12 col-xs-12 text-left">Date of Birth </label>
+            <input type="date" max="{{todate | date:'yyyy-MM-dd'}}" class="form-control"  name="dob" id="dob" [(ngModel)]="user.dob" #dob="ngModel" required/>
+            <div *ngIf="!dob.valid && dob.touched" class="error-msg">DOB is required</div>
+          </div>
+          <div class="form-group col-md-12  col-sm-12 col-xs-12">
+            <label class="col-md-12  col-sm-12 col-xs-12 text-left">Email ID </label>
+            <input type="text" class="form-control"  name="username" id="username" [(ngModel)]="user.username" #username="ngModel" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+            <div *ngIf="!username.valid && username.touched" class="error-msg">Email should be in valid format</div>
+          </div>
+          <div class="form-group col-md-12 col-sm-12 col-xs-12">
+            <label class="col-md-12  col-sm-12 col-xs-12 text-left">Password</label>
+            <input type="password" class="form-control"  name="password" id="password" [(ngModel)]="user.password" #password="ngModel" required pattern="^(?=.*?[A-Za-z])(?=.*?[0-9])(?=.*?[$@£!%*#?&]).{8,}$"/>
+            <div *ngIf="!password.valid && password.touched" class="error-msg">Password should be strong</div>
+          </div>
+          <button class="btn btn-success">SIGNUP</button>
+        </form>
+      </div>
+    </div>
+  </div>

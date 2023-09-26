@@ -1,0 +1,92 @@
+<div class="col-md-12 col-sm-12 col-xs-12 offset-md-0 mt-5">
+    <nav class="navbar">
+        <a class="navbar-brand" style="float: left;" routerLink="/register">Add Company</a>
+        <a class="navbar-brand" style="float: right;" (click)="logout()">Logout</a>
+    </nav>
+</div>
+<div *ngIf="errorMessage" class="alert alert-danger col-md-12 col-sm-12 col-xs-12 offset-md-0 mt-2">{{errorMessage}}</div>
+<div class="col-md-5 col-sm-12 col-xs-12 offset-md-2 mt-5">
+    <div class="view-page col-md-12 col-sm-12 col-xs-12 offset-md-5 mt-5">
+        <div class="form">
+            <form name="companyDetailsForm" class="view-form" #v="ngForm">
+                <h2 class="text-center">Company's  Details !!</h2>
+                <div class="form-group col-md-12  col-sm-12 col-xs-12" id="viewStocks">
+                    <label class="col-md-12 col-sm-12 col-xs-12 text-left">Branch ID: </label>
+                    
+                    <input type="text" name="branchId" id="branchId" class="form-control"
+                        [(ngModel)]="company.branchId" #branchId="ngModel" required />
+                    <!-- <div *ngIf="id.invalid && id.touched"
+                        class="error-msg">Brnach id is required to search!</div> -->
+                </div>
+
+                <div class="form-group col-md-12  col-sm-12 col-xs-12">
+                    <label class="col-md-12 col-sm-12 col-xs-12 text-left">Company Name: </label>
+                    <input type="text" name="branchName" id="branchName" class="form-control"
+                        [(ngModel)]="company.branchName" #branchName="ngModel" required pattern="^[a-zA-Z ]*$" />
+                    <!-- <div *ngIf="!branchName.valid && branchName.touched" class="error-msg">BranchName  is
+                        required and can contain only Alphabets and space</div> -->
+                </div>
+                 <div class="form-group  col-md-12  col-sm-12 col-xs-12">
+                    <label class="col-md-6 text-left">Place: </label>
+                    <div *ngFor="let packagesDto of company.packagesDto; let i = index">
+                    <input type="text" name="place" id="place" class="form-control"
+                        [(ngModel)]="packagesDto.place" #place="ngModel" required  />
+                        </div>   
+                    <!-- <div *ngIf="!packagesDto.place.valid && packagesDto.place.touched" class="error-msg">place  is
+                        required and can contain only Alphabets and space</div> -->
+                   
+                </div>
+                <div class="updateBtn" style="float: left;width: 45%;">
+                    <button (click)="onSubmit()" class="btn btn-success">SEARCH</button>
+                </div>
+                <div class="clearBtn" style="float: right;width: 45%;">
+                    <button (click)="onReset()" class="btn btn-primary">CLEAR</button>
+                </div>
+                <br><br>
+                <div class="form-group col-md-12  col-sm-12 col-xs-12">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td scope="col">Brnach ID</td>
+                                <td scope="col">Brnach Name</td>
+                                <td scope="col">Website </td>
+                                <td scope="col">contact </td>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let comp of companyLists; let i = index">
+                            <!-- <div *ngFor="let comp of companyLists; let i = index"> -->
+                                <tr>
+                                    <!-- <td>{{i+1}}</td> -->
+                                    <td>
+                                        <!-- <input type="text" [(ngModel)]="s.price" [name]="'price'+i" class="form-control" #price="ngModel" [value]="s.price"/> -->
+                                        <p>{{comp.branchId}}</p>
+                                    </td>
+                                    <td>
+                                        <!-- <input type="datetime" [(ngModel)]="s.createdOn" [name]="'createdOn'+i" class="form-control" [value]="s.createdOn" #createdOn="ngModel"/> -->
+                                        <p>{{comp.branchName}}</p>
+                                    </td>
+                                    <td>
+                                        <p>{{comp.website}}</p>
+                                    </td>
+                                    <td>
+                                        <p>{{comp.contact}}</p>
+                                    </td>
+                                </tr>
+                            
+                                <tr *ngFor="let p of comp.packagesDto; let i = index">
+                                    <td>
+                                        <p>{{p.place}}</p>
+                                    </td>
+                                    <td>
+                                        <p>{{p.tariff}}</p>
+                                    </td>
+                                    <td><button type="button" (click)="updateTariff(comp.branchId)" class="btn btn-primary">Update tariff</button></td>
+                                </tr>
+                        <!-- </div> -->
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
